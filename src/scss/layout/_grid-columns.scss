@@ -1,0 +1,66 @@
+// ==========================================================================
+// Grid-Columns
+// ==========================================================================
+
+// Calculate grid columns
+
+.grid__col {
+  @include mq(medium) {
+    @include g-columns;
+  }
+}
+
+
+// Column Styles
+
+[class^="grid__col--"] {
+
+  @include mq(small) {
+    margin-top: em(12px);
+    margin-bottom: em(12px);
+  }
+  @include mq(medium) {
+    @include doubly(percentage($g-gutter-width / $context));
+    float: left;
+    min-height: 1px;
+    // background: #fab;
+    &:last-of-type {
+      float: right;
+    }
+  }
+}
+
+
+// Column overlay
+
+.grid--overlay {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.grid__col--overlay {
+  padding-top: 8px;
+  opacity: .4;
+  color: $color-primary;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-right: 1px solid $color-primary;
+  border-left: 1px solid $color-primary;
+  font-weight: 700;
+  height: 100%;
+  // background: #fab;
+}
+
+.grid__col--overlay small {
+  border-bottom: 1px solid;
+  width: 100%;
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 18px;
+  line-height: 0;
+}
