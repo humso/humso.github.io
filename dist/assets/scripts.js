@@ -1,9 +1,4 @@
-/*! Starter - v1.0.0 - 2017-02-17 */
-// Google Analytics Tracking
-
-console.log("GA tracking is working");
-
-// Is js working?
+/*! Starter - v1.0.0 - 2017-02-18 */// Is js working?
 
 $(function() {
 	console.log('JS is working');
