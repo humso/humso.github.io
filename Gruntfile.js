@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       img_src:      'src/images',
       js_src:       'src/js',
       assets_dest:  'dist/assets',
-      banner:       '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
+      banner:       '// *! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */' + '\n',
       archive:      '<%= pkg.name %>-v<%= pkg.version %>'
     },
 
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
           banner: '<%= app.banner %>',
         },
         dist: {
-          src: ['<%= app.js_src %>/*.js', '<%= app.js_src %>/scripts.js' ],
+          src: ['<%= app.js_src %>/modules/*.js', '<%= app.js_src %>/scripts.js', '<%= app.js_src %>/plugins/*.js' ],
           dest: '<%= app.assets_dest %>/scripts.js'
         }
       },
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
       // Also possible to reload the browser
       watch: {
         scripts: {
-          files: ['<%= app.js_src %>/*.js'],
+          files: ['<%= app.js_src %>/**/*.js'],
           tasks: ['concat']
         },
         styles: {
